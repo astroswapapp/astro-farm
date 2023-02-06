@@ -78,13 +78,13 @@ async function main() {
 
   const AstroStake = await deploy("AstroStake", [AstroToken]);
 
-  const _cakePerSecond = "13000000000000000000";
+  const _cakePerSecond = "10000000000000000000";
 
   //const blockNumber = await ethers.provider.getBlockNumber();
 
   // const _startTimestamp = parseInt(new Date().getTime() / 1000);
   // const _endTimestamp = _startTimestamp + 3600 * 24 * 365;
-  const _startTimestamp = 1643464800;
+  const _startTimestamp = 1676246400; // Mon Feb 13 2023 00:00:00 GMT+0000
   const _endTimestamp = _startTimestamp + 3600 * 24 * 365;
   const _devaddr = admins._devaddr;
   //const bonusPeriodSeconds = 10000
@@ -92,7 +92,7 @@ async function main() {
   //const vlxStakingRewardPerSecond = '42000000000000000'
 
   //Timelock
-  const Timelock = await deploy("Timelock", [_devaddr, 21700]);
+  // const Timelock = await deploy("Timelock", [_devaddr, 21700]);
 
   const AstroFarm = await deploy("AstroFarm", [
     AstroToken,
@@ -115,7 +115,7 @@ async function main() {
 
   //await deploy("VLXStaking", [WVLX, AstroToken, vlxStakingRewardPerSecond, _startTimestamp, bonusEndTimestamp, _devaddr, WVLX]);
 
-  await deploy("AstroStakingFactory");
+  // await deploy("AstroStakingFactory");
 
   //MasterChef _chef, IBEP20 _astro, address _admin, address _receiver
   //const LotteryRewardPool = await deploy("LotteryRewardPool", [AstroFarm, WagyuToken, _devaddr, _devaddr]);
